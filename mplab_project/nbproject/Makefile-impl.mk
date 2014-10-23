@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=pic_led_blink
+PROJECTNAME=mplab_project
 
 # Active Configuration
 DEFAULTCONF=default
