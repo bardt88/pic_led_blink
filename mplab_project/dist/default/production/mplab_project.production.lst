@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Thu Oct 23 20:23:58 2014
+                                                                                               Mon Oct 27 22:30:53 2014
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	12F675
@@ -9,107 +9,173 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      3                           	opt	lm
      4                           	psect	maintext,global,class=CODE,split=1,delta=2
      5                           	psect	cinit,global,class=CODE,merge=1,delta=2
-     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
-     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
-     8                           	dabs	1,0x5E,2
-     9  000A                     
-    10                           	psect	maintext
-    11  03FC                     __pmaintext:	
-    12                           ; #config settings
-    13                           
-    14                           
-    15                           ;psect for function _main
-    16  0000                     
-    17 ;;
-    18 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-    19 ;;
-    20 ;; *************** function _main *****************
-    21 ;; Defined at:
-    22 ;;		line 7 in file "../source_files/main.c"
-    23 ;; Parameters:    Size  Location     Type
-    24 ;;  argc            2    0[BANK0 ] int 
-    25 ;;  argv            2    2[BANK0 ] PTR PTR unsigned char 
-    26 ;; Auto vars:     Size  Location     Type
-    27 ;;		None
-    28 ;; Return value:  Size  Location     Type
-    29 ;;                  2    0[BANK0 ] int 
-    30 ;; Registers used:
-    31 ;;		None
-    32 ;; Tracked objects:
-    33 ;;		On entry : 17F/0
-    34 ;;		On exit  : 0/0
-    35 ;;		Unchanged: 0/0
-    36 ;; Data sizes:     COMMON   BANK0
-    37 ;;      Params:         0       4
-    38 ;;      Locals:         0       0
-    39 ;;      Temps:          0       0
-    40 ;;      Totals:         0       4
-    41 ;;Total ram usage:        4 bytes
-    42 ;; This function calls:
-    43 ;;		Nothing
-    44 ;; This function is called by:
-    45 ;;		Startup code after reset
-    46 ;; This function uses a non-reentrant model
-    47 ;;
-    48  03FC                     _main:	
-    49                           
-    50                           ;main.c: 9: return (0);
-    51                           ;	Return value of _main is never used
-    52                           
-    53                           ;incstack = 0
-    54                           ; Regs used in _main: []
-    55  03FC  2800               	ljmp	start
-    56  03FD                     __end_of_main:	
-    57  005E                     btemp	set	94	;btemp
-    58  005E                     wtemp	set	94
-    59  005E                     wtemp0	set	94
-    60  0060                     wtemp1	set	96
-    61  0062                     wtemp2	set	98
-    62  0064                     wtemp3	set	100
-    63  0066                     wtemp4	set	102
-    64  0068                     wtemp5	set	104
-    65  005F                     wtemp6	set	95
-    66  005E                     ttemp	set	94
-    67  005E                     ttemp0	set	94
-    68  0061                     ttemp1	set	97
-    69  0064                     ttemp2	set	100
-    70  0067                     ttemp3	set	103
-    71  005F                     ttemp4	set	95
-    72  005E                     ltemp	set	94
-    73  005E                     ltemp0	set	94
-    74  0062                     ltemp1	set	98
-    75  0066                     ltemp2	set	102
-    76  0060                     ltemp3	set	96
-    77                           
-    78                           	psect	cinit
-    79  03FD                     start_initialization:	
-    80  03FD                     __initialization:	
-    81  03FD                     end_of_initialization:	
-    82                           ;End of C runtime variable initialization code
+     6                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     7                           	dabs	1,0x5E,2
+     8  0000                     	;# 
+     9  0001                     	;# 
+    10  0002                     	;# 
+    11  0003                     	;# 
+    12  0004                     	;# 
+    13  0005                     	;# 
+    14  000A                     	;# 
+    15  000B                     	;# 
+    16  000C                     	;# 
+    17  000E                     	;# 
+    18  000E                     	;# 
+    19  000F                     	;# 
+    20  0010                     	;# 
+    21  0019                     	;# 
+    22  001E                     	;# 
+    23  001F                     	;# 
+    24  0081                     	;# 
+    25  0085                     	;# 
+    26  008C                     	;# 
+    27  008E                     	;# 
+    28  0090                     	;# 
+    29  0095                     	;# 
+    30  0096                     	;# 
+    31  0096                     	;# 
+    32  0099                     	;# 
+    33  009A                     	;# 
+    34  009A                     	;# 
+    35  009B                     	;# 
+    36  009C                     	;# 
+    37  009D                     	;# 
+    38  009E                     	;# 
+    39  009F                     	;# 
+    40  0005                     _GPIO	set	5
+    41  002B                     _GP3	set	43
+    42                           
+    43                           	psect	maintext
+    44  03DC                     __pmaintext:	
+    45                           ; #config settings
+    46                           
+    47                           
+    48                           ;psect for function _main
+    49  0000                     
+    50 ;;
+    51 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+    52 ;;
+    53 ;; *************** function _main *****************
+    54 ;; Defined at:
+    55 ;;		line 15 in file "../source_files/main.c"
+    56 ;; Parameters:    Size  Location     Type
+    57 ;;		None
+    58 ;; Auto vars:     Size  Location     Type
+    59 ;;		None
+    60 ;; Return value:  Size  Location     Type
+    61 ;;                  2    8[BANK0 ] int 
+    62 ;; Registers used:
+    63 ;;		wreg, status,2
+    64 ;; Tracked objects:
+    65 ;;		On entry : 17F/0
+    66 ;;		On exit  : 0/0
+    67 ;;		Unchanged: 0/0
+    68 ;; Data sizes:     COMMON   BANK0
+    69 ;;      Params:         0       0
+    70 ;;      Locals:         0       0
+    71 ;;      Temps:          0       3
+    72 ;;      Totals:         0       3
+    73 ;;Total ram usage:        3 bytes
+    74 ;; This function calls:
+    75 ;;		Nothing
+    76 ;; This function is called by:
+    77 ;;		Startup code after reset
+    78 ;; This function uses a non-reentrant model
+    79 ;;
+    80  03DC                     _main:	
+    81                           
+    82                           ;main.c: 16: GPIO = 0x00;
     83                           
-    84  03FD                     __end_of__initialization:	
-    85  03FD  0183               	clrf	3
-    86  03FE  2BFC               	ljmp	_main	;jump to C main() function
-    87                           
-    88                           	psect	cstackCOMMON
-    89  0000                     __pcstackCOMMON:	
-    90  0000                     ??_main:	
+    84                           ;incstack = 0
+    85                           ; Regs used in _main: [wreg+status,2]
+    86  03DC  1283               	bcf	3,5	;RP0=0, select bank0
+    87  03DD  0185               	clrf	5	;volatile
+    88  03DE                     l481:	
+    89                           ;main.c: 17: while(1) {
+    90                           
     91                           
-    92                           	psect	cstackBANK0
-    93  0020                     __pcstackBANK0:	
-    94                           ; 0 bytes @ 0x0
+    92                           ;main.c: 18: GP3 = 1;
+    93  03DE  1283               	bcf	3,5	;RP0=0, select bank0
+    94  03DF  1585               	bsf	5,3	;volatile
     95                           
-    96  0020                     ?_main:	
-    97  0020                     main@argc:	
-    98                           ; 2 bytes @ 0x0
-    99                           
-   100                           
-   101                           ; 2 bytes @ 0x0
-   102  0020                     	ds	2
-   103  0022                     main@argv:	
-   104                           
-   105                           ; 2 bytes @ 0x2
-   106  0022                     	ds	2
+    96                           ;main.c: 19: _delay((unsigned long)((500)*(4000000/4000.0)));
+    97  03E0  3003               	movlw	3
+    98  03E1  00A2               	movwf	??_main+2
+    99  03E2  308A               	movlw	138
+   100  03E3  00A1               	movwf	??_main+1
+   101  03E4  3056               	movlw	86
+   102  03E5  00A0               	movwf	??_main
+   103  03E6                     u17:	
+   104  03E6  0BA0               	decfsz	??_main,f
+   105  03E7  2BE6               	goto	u17
+   106  03E8  0BA1               	decfsz	??_main+1,f
+   107  03E9  2BE6               	goto	u17
+   108  03EA  0BA2               	decfsz	??_main+2,f
+   109  03EB  2BE6               	goto	u17
+   110  03EC  2BED               	nop2
+   111                           
+   112                           ;main.c: 20: GP3 = 0;
+   113  03ED  1283               	bcf	3,5	;RP0=0, select bank0
+   114  03EE  1185               	bcf	5,3	;volatile
+   115                           
+   116                           ;main.c: 21: _delay((unsigned long)((500)*(4000000/4000.0)));
+   117  03EF  3003               	movlw	3
+   118  03F0  00A2               	movwf	??_main+2
+   119  03F1  308A               	movlw	138
+   120  03F2  00A1               	movwf	??_main+1
+   121  03F3  3056               	movlw	86
+   122  03F4  00A0               	movwf	??_main
+   123  03F5                     u27:	
+   124  03F5  0BA0               	decfsz	??_main,f
+   125  03F6  2BF5               	goto	u27
+   126  03F7  0BA1               	decfsz	??_main+1,f
+   127  03F8  2BF5               	goto	u27
+   128  03F9  0BA2               	decfsz	??_main+2,f
+   129  03FA  2BF5               	goto	u27
+   130  03FB  2BFC               	nop2
+   131  03FC  2BDE               	goto	l481
+   132  03FD                     __end_of_main:	
+   133  005E                     btemp	set	94	;btemp
+   134  005E                     wtemp	set	94
+   135  005E                     wtemp0	set	94
+   136  0060                     wtemp1	set	96
+   137  0062                     wtemp2	set	98
+   138  0064                     wtemp3	set	100
+   139  0066                     wtemp4	set	102
+   140  0068                     wtemp5	set	104
+   141  005F                     wtemp6	set	95
+   142  005E                     ttemp	set	94
+   143  005E                     ttemp0	set	94
+   144  0061                     ttemp1	set	97
+   145  0064                     ttemp2	set	100
+   146  0067                     ttemp3	set	103
+   147  005F                     ttemp4	set	95
+   148  005E                     ltemp	set	94
+   149  005E                     ltemp0	set	94
+   150  0062                     ltemp1	set	98
+   151  0066                     ltemp2	set	102
+   152  0060                     ltemp3	set	96
+   153                           
+   154                           	psect	cinit
+   155  03FD                     start_initialization:	
+   156  03FD                     __initialization:	
+   157  03FD                     end_of_initialization:	
+   158                           ;End of C runtime variable initialization code
+   159                           
+   160  03FD                     __end_of__initialization:	
+   161  03FD  0183               	clrf	3
+   162  03FE  2BDC               	ljmp	_main	;jump to C main() function
+   163                           
+   164                           	psect	cstackBANK0
+   165  0020                     __pcstackBANK0:	
+   166  0020                     ??_main:	
+   167  0020                     ?_main:	
+   168                           ; 0 bytes @ 0x0
+   169                           
+   170                           
+   171                           ; 2 bytes @ 0x0
+   172  0020                     	ds	3
 
 
 Data Sizes:
@@ -123,7 +189,7 @@ Data Sizes:
 Auto Spaces:
     Space          Size  Autos    Used
     COMMON            0      0       0
-    BANK0            62      4       4
+    BANK0            62      3       3
 
 Pointer List with Targets:
 
@@ -142,8 +208,8 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 4     0      4       0
-                                              0 BANK0      4     0      4
+ (0) _main                                                 3     3      0       0
+                                              0 BANK0      3     3      0
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 0
  ---------------------------------------------------------------------------------
@@ -165,25 +231,27 @@ BITSFR1              0      0       0       2        0.0%
 SFR1                 0      0       0       2        0.0%
 STACK                0      0       0       2        0.0%
 BITBANK0            3E      0       0       3        0.0%
-BANK0               3E      4       4       4        6.5%
+BANK0               3E      3       3       4        4.8%
 ABS                  0      0       0       5        0.0%
 DATA                 0      0       0       6        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Thu Oct 23 20:23:58 2014
+Symbol Table                                                                                   Mon Oct 27 22:30:53 2014
 
-            __CFG_CP$OFF 0000                     _main 03FC                     btemp 005E  
-                   ltemp 005E                     start 0000                     ttemp 005E  
-                   wtemp 005E            __CFG_MCLRE$ON 0000                    ?_main 0020  
-          __CFG_WDTE$OFF 0000                    ltemp0 005E                    ltemp1 0062  
-                  ltemp2 0066                    ltemp3 0060                    ttemp0 005E  
-                  ttemp1 0061                    ttemp2 0064                    ttemp3 0067  
-                  ttemp4 005F                    status 0003                    wtemp0 005E  
-                  wtemp1 0060                    wtemp2 0062                    wtemp3 0064  
-                  wtemp4 0066                    wtemp5 0068                    wtemp6 005F  
-        __initialization 03FD             __end_of_main 03FD                   ??_main 0000  
-__end_of__initialization 03FD           __pcstackCOMMON 0000               __pmaintext 03FC  
-   end_of_initialization 03FD      start_initialization 03FD                ___latbits 0000  
-          __pcstackBANK0 0020            __size_of_main 0001                 main@argc 0020  
-               main@argv 0022  
+            __CFG_CP$OFF 0000                       u17 03E6                       u27 03F5  
+                    l481 03DE                      _GP3 002B             __CFG_CPD$OFF 0000  
+           __CFG_WDTE$ON 0000                     _GPIO 0005                     _main 03DC  
+                   btemp 005E            __CFG_BOREN$ON 0000                     ltemp 005E  
+                   start 0000                     ttemp 005E                     wtemp 005E  
+          __CFG_MCLRE$ON 0000                    ?_main 0020                    ltemp0 005E  
+                  ltemp1 0062                    ltemp2 0066                    ltemp3 0060  
+                  ttemp0 005E                    ttemp1 0061                    ttemp2 0064  
+                  ttemp3 0067                    ttemp4 005F                    status 0003  
+                  wtemp0 005E                    wtemp1 0060                    wtemp2 0062  
+                  wtemp3 0064                    wtemp4 0066                    wtemp5 0068  
+                  wtemp6 005F          __initialization 03FD             __end_of_main 03FD  
+                 ??_main 0020           __CFG_PWRTE$OFF 0000  __end_of__initialization 03FD  
+             __pmaintext 03DC     end_of_initialization 03FD      start_initialization 03FD  
+              ___latbits 0000            __pcstackBANK0 0020            __size_of_main 0021  
+      __CFG_FOSC$INTRCIO 0000  

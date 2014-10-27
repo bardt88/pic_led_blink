@@ -150,7 +150,7 @@
         <property key="tracecontrol.timestamp" value="0"/>
         <property key="tracecontrol.tracebufmax" value="546000"/>
         <property key="tracecontrol.tracefile"
-                  value="C:\Users\Baksteen\Documents\projects\pic\pic_led_blink\mplab_project\debug\default\defmplabxtrace.log"/>
+                  value="E:\projects\pic\pic_led_blink\mplab_project\debug\default\defmplabxtrace.log"/>
         <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart10io.output" value="window"/>
         <property key="uart10io.outputfile" value=""/>

@@ -1,13 +1,13 @@
 ### HEXMate logfile and output summary ###
 ### Memory Usage ###
  Unused memory ranges:
-  Ah - 7F7h
+  Ah - 7B7h
   7FEh - 400Dh
   4010h - 403Fh
   
  dist/default/production\mplab_project.production.hex ranges:
   0h - 9h
-  7F8h - 7FDh
+  7B8h - 7FDh
   400Eh - 400Fh
   
 ### Hex Memory Map ###
@@ -23,5 +23,6 @@
   X = Find & delete opcode
   1 = dist/default/production\mplab_project.production.hex
 00000000: 1111111111------------------------------------------------------
-000007C0: --------------------------------------------------------111111--
+00000780: --------------------------------------------------------11111111
+000007C0: 11111111111111111111111111111111111111111111111111111111111111--
 00004000: --------------11------------------------------------------------

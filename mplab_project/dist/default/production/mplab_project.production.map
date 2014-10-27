@@ -5,9 +5,9 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+dist/default/production\mplab_project.production.sym \
   --cmf=dist/default/production\mplab_project.production.cmf -z -Q12F675 \
-  -oC:\Users\Baksteen\AppData\Local\Temp\s44k.6 \
+  -oC:\Users\Bart\AppData\Local\Temp\s320.6 \
   -Mdist/default/production/mplab_project.production.map -E1 -ver=XC8 \
-  -ASTACK=024h-05dh -pstack=STACK -ACONST=00h-0FFhx3,0300h-03FEh \
+  -ASTACK=023h-05dh -pstack=STACK -ACONST=00h-0FFhx3,0300h-03FEh \
   -ACODE=00h-03FEh -ASTRCODE=00h-03FEh -AENTRY=00h-0FFhx3,0300h-03FEh \
   -ASTRING=00h-0FFhx3,0300h-03FEh -ABANK0=020h-05Dh -ARAM=020h-05Dh \
   -AABS1=020h-05Fh -ACOMMON=05Eh-05Fh -ASFR0=00h-01Fh -ASFR1=080h-0DDh \
@@ -16,7 +16,7 @@ Linker command line:
   -AIDLOC=02000h-02003h -pidloc=IDLOC -DIDLOC=2 -AEEDATA=00h-07Fh/02100h \
   -peeprom_data=EEDATA -DEEDATA=2 -posccal=03FFh -DCODE=2 -DSTRCODE=2 \
   -DSTRING=2 -DCONST=2 -DENTRY=2 -k \
-  C:\Users\Baksteen\AppData\Local\Temp\s44k.obj \
+  C:\Users\Bart\AppData\Local\Temp\s320.obj \
   dist/default/production\mplab_project.production.obj 
 
 Object code version is 3.11
@@ -26,13 +26,13 @@ Machine type is 12F675
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Baksteen\AppData\Local\Temp\s44k.obj
+C:\Users\Bart\AppData\Local\Temp\s320.obj
                 end_init                              0        0        5        0       0
                 config                             2007     2007        1     400E       0
 dist/default/production\mplab_project.production.obj
                 cinit                               3FD      3FD        2      7FA       0
-                cstackBANK0                          20       20        4       20       1
-                maintext                            3FC      3FC        1      7F8       0
+                cstackBANK0                          20       20        3       20       1
+                maintext                            3DC      3DC       21      7B8       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -42,7 +42,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              0        0        5         0
                 cinit                               3FD      3FD        2         0
-                maintext                            3FC      3FC        1         0
+                maintext                            3DC      3DC       21         0
 
         CLASS   STRCODE        
 
@@ -51,7 +51,7 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   STRING         
 
         CLASS   BANK0          
-                cstackBANK0                          20       20        4         1
+                cstackBANK0                          20       20        3         1
 
         CLASS   RAM            
 
@@ -78,8 +78,8 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000005  000005         0       0  CODE        2
-                cstackBANK0                    000020  000004  000024        20       1  BANK0       1
-                maintext                       0003FC  000001  0003FD       7F8       0  CODE        2
+                cstackBANK0                    000020  000003  000023        20       1  BANK0       1
+                maintext                       0003DC  000021  0003FD       7B8       0  CODE        2
                 cinit                          0003FD  000002  0003FF       7FA       0  CODE        2
                 config                         002007  000001  002008      400E       0  CONFIG      2
 
@@ -87,158 +87,160 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0024-005D             3A           1
-        CODE             0005-03FB            3F7           2
-        CONST            0005-03FB            100           2
+        BANK0            0023-005D             3B           1
+        CODE             0005-03DB            3D7           2
+        CONST            0005-03DB            100           2
         EEDATA           2100-217F             80           2
-        ENTRY            0005-03FB            100           2
+        ENTRY            0005-03DB            100           2
         IDLOC            2000-2003              4           2
-        RAM              0024-005D             3A           1
+        RAM              0023-005D             3B           1
         SFR0             0000-001F             20           1
         SFR1             0080-00DD             5E           1
-        STACK            0024-005D             3A           1
-        STRCODE          0005-03FB            3F7           2
-        STRING           0005-03FB            100           2
+        STACK            0023-005D             3B           1
+        STRCODE          0005-03DB            3D7           2
+        STRING           0005-03DB            100           2
 
                                   Symbol Table
 
-__CFG_CP$OFF             (abs)        0000
-__CFG_MCLRE$ON           (abs)        0000
-__CFG_WDTE$OFF           (abs)        0000
-__Habs1                  abs1         07FE
-__Hbank0                 bank0        07FE
-__Hbank1                 bank1        07FE
-__Hcinit                 cinit        03FF
-__Hclrtext               clrtext      07FE
-__Hcode                  code         07FE
-__Hcommon                common       07FE
-__Hconfig                config       2008
-__HcstackBANK0           cstackBANK0  07FE
-__HcstackCOMMON          cstackCOMMON 07FE
-__Heeprom_data           eeprom_data  0000
-__Hend_init              end_init     0005
-__Hfunctab               functab      0000
-__Hidloc                 idloc        0000
-__Hinit                  init         0000
-__Hintentry              intentry     0000
-__Hmaintext              maintext     07FE
-__Hosccal                osccal       03FF
-__Hpowerup               powerup      0000
-__Hram                   ram          07FE
-__Hreset_vec             reset_vec    0000
-__Hsfr0                  sfr0         07FE
-__Hsfr1                  sfr1         07FE
-__Hspace_0               (abs)        2008
-__Hspace_1               (abs)        07FE
-__Hspace_2               (abs)        0000
-__Hspace_3               (abs)        0000
-__Hstack                 stack        0000
-__Hstrings               strings      07FE
-__Htext                  text         07FE
-__Labs1                  abs1         07FE
-__Lbank0                 bank0        07FE
-__Lbank1                 bank1        07FE
-__Lcinit                 cinit        03FD
-__Lclrtext               clrtext      07FE
-__Lcode                  code         07FE
-__Lcommon                common       07FE
-__Lconfig                config       2007
-__LcstackBANK0           cstackBANK0  07FE
-__LcstackCOMMON          cstackCOMMON 07FE
-__Leeprom_data           eeprom_data  0000
-__Lend_init              end_init     0000
-__Lfunctab               functab      0000
-__Lidloc                 idloc        0000
-__Linit                  init         0000
-__Lintentry              intentry     0000
-__Lmaintext              maintext     07FE
-__Losccal                osccal       03FF
-__Lpowerup               powerup      0000
-__Lram                   ram          07FE
-__Lreset_vec             reset_vec    0000
-__Lsfr0                  sfr0         07FE
-__Lsfr1                  sfr1         07FE
-__Lspace_0               (abs)        0000
-__Lspace_1               (abs)        0000
-__Lspace_2               (abs)        0000
-__Lspace_3               (abs)        0000
-__Lstack                 stack        0000
-__Lstrings               strings      07FE
-__Ltext                  text         07FE
-__S0                     (abs)        2008
-__S1                     (abs)        0024
-__S2                     (abs)        0000
-__S3                     (abs)        0000
-___int_sp                stack        0000
-___latbits               (abs)        0000
-___osccal_val            osccal       03FF
-___sp                    stack        0000
-__end_of__initialization cinit        03FD
-__end_of_main            maintext     03FD
-__initialization         cinit        03FD
-__pcstackBANK0           cstackBANK0  0020
-__pcstackCOMMON          cstackCOMMON 0000
-__pmaintext              maintext     03FC
-__size_of_main           (abs)        0000
-_main                    maintext     03FC
-btemp                    (abs)        005E
-end_of_initialization    cinit        03FD
-intlevel0                functab      0000
-intlevel1                functab      0000
-intlevel2                functab      0000
-intlevel3                functab      0000
-intlevel4                functab      0000
-intlevel5                functab      0000
-ltemp                    (abs)        005E
-ltemp0                   (abs)        005E
-ltemp1                   (abs)        0062
-ltemp2                   (abs)        0066
-ltemp3                   (abs)        0060
-reset_vec                reset_vec    0000
-stackhi                  (abs)        0000
-stacklo                  (abs)        0000
-start                    init         0000
-start_initialization     cinit        03FD
-ttemp                    (abs)        005E
-ttemp0                   (abs)        005E
-ttemp1                   (abs)        0061
-ttemp2                   (abs)        0064
-ttemp3                   (abs)        0067
-ttemp4                   (abs)        005F
-wtemp                    (abs)        005E
-wtemp0                   (abs)        005E
-wtemp1                   (abs)        0060
-wtemp2                   (abs)        0062
-wtemp3                   (abs)        0064
-wtemp4                   (abs)        0066
-wtemp5                   (abs)        0068
-wtemp6                   (abs)        005F
+_GP3                     (abs)       002B
+_GPIO                    (abs)       0005
+__CFG_BOREN$ON           (abs)       0000
+__CFG_CP$OFF             (abs)       0000
+__CFG_CPD$OFF            (abs)       0000
+__CFG_FOSC$INTRCIO       (abs)       0000
+__CFG_MCLRE$ON           (abs)       0000
+__CFG_PWRTE$OFF          (abs)       0000
+__CFG_WDTE$ON            (abs)       0000
+__Habs1                  abs1        07FE
+__Hbank0                 bank0       07FE
+__Hbank1                 bank1       07FE
+__Hcinit                 cinit       03FF
+__Hclrtext               clrtext     07FE
+__Hcode                  code        07FE
+__Hcommon                common      07FE
+__Hconfig                config      2008
+__HcstackBANK0           cstackBANK0 07FE
+__Heeprom_data           eeprom_data 0000
+__Hend_init              end_init    0005
+__Hfunctab               functab     0000
+__Hidloc                 idloc       0000
+__Hinit                  init        0000
+__Hintentry              intentry    0000
+__Hmaintext              maintext    07FE
+__Hosccal                osccal      03FF
+__Hpowerup               powerup     0000
+__Hram                   ram         07FE
+__Hreset_vec             reset_vec   0000
+__Hsfr0                  sfr0        07FE
+__Hsfr1                  sfr1        07FE
+__Hspace_0               (abs)       2008
+__Hspace_1               (abs)       07FE
+__Hspace_2               (abs)       0000
+__Hspace_3               (abs)       0000
+__Hstack                 stack       0000
+__Hstrings               strings     07FE
+__Htext                  text        07FE
+__Labs1                  abs1        07FE
+__Lbank0                 bank0       07FE
+__Lbank1                 bank1       07FE
+__Lcinit                 cinit       03FD
+__Lclrtext               clrtext     07FE
+__Lcode                  code        07FE
+__Lcommon                common      07FE
+__Lconfig                config      2007
+__LcstackBANK0           cstackBANK0 07FE
+__Leeprom_data           eeprom_data 0000
+__Lend_init              end_init    0000
+__Lfunctab               functab     0000
+__Lidloc                 idloc       0000
+__Linit                  init        0000
+__Lintentry              intentry    0000
+__Lmaintext              maintext    07FE
+__Losccal                osccal      03FF
+__Lpowerup               powerup     0000
+__Lram                   ram         07FE
+__Lreset_vec             reset_vec   0000
+__Lsfr0                  sfr0        07FE
+__Lsfr1                  sfr1        07FE
+__Lspace_0               (abs)       0000
+__Lspace_1               (abs)       0000
+__Lspace_2               (abs)       0000
+__Lspace_3               (abs)       0000
+__Lstack                 stack       0000
+__Lstrings               strings     07FE
+__Ltext                  text        07FE
+__S0                     (abs)       2008
+__S1                     (abs)       0023
+__S2                     (abs)       0000
+__S3                     (abs)       0000
+___int_sp                stack       0000
+___latbits               (abs)       0000
+___osccal_val            osccal      03FF
+___sp                    stack       0000
+__end_of__initialization cinit       03FD
+__end_of_main            maintext    03FD
+__initialization         cinit       03FD
+__pcstackBANK0           cstackBANK0 0020
+__pmaintext              maintext    03DC
+__size_of_main           (abs)       0000
+_main                    maintext    03DC
+btemp                    (abs)       005E
+end_of_initialization    cinit       03FD
+intlevel0                functab     0000
+intlevel1                functab     0000
+intlevel2                functab     0000
+intlevel3                functab     0000
+intlevel4                functab     0000
+intlevel5                functab     0000
+ltemp                    (abs)       005E
+ltemp0                   (abs)       005E
+ltemp1                   (abs)       0062
+ltemp2                   (abs)       0066
+ltemp3                   (abs)       0060
+reset_vec                reset_vec   0000
+stackhi                  (abs)       0000
+stacklo                  (abs)       0000
+start                    init        0000
+start_initialization     cinit       03FD
+ttemp                    (abs)       005E
+ttemp0                   (abs)       005E
+ttemp1                   (abs)       0061
+ttemp2                   (abs)       0064
+ttemp3                   (abs)       0067
+ttemp4                   (abs)       005F
+wtemp                    (abs)       005E
+wtemp0                   (abs)       005E
+wtemp1                   (abs)       0060
+wtemp2                   (abs)       0062
+wtemp3                   (abs)       0064
+wtemp4                   (abs)       0066
+wtemp5                   (abs)       0068
+wtemp6                   (abs)       005F
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 7 in file "../source_files/main.c"
+		line 15 in file "../source_files/main.c"
  Parameters:    Size  Location     Type
-  argc            2    0[BANK0 ] int 
-  argv            2    2[BANK0 ] PTR PTR unsigned char 
+		None
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  2    0[BANK0 ] int 
+                  2    8[BANK0 ] int 
  Registers used:
-		None
+		wreg, status,2
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMMON   BANK0
-      Params:         0       4
+      Params:         0       0
       Locals:         0       0
-      Temps:          0       0
-      Totals:         0       4
-Total ram usage:        4 bytes
+      Temps:          0       3
+      Totals:         0       3
+Total ram usage:        3 bytes
  This function calls:
 		Nothing
  This function is called by:
@@ -251,9 +253,9 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 ../source_files/main.c
-		_main          		CODE           	03FC	0000	1
+		_main          		CODE           	03DC	0000	33
 
-../source_files/main.c estimated size: 1
+../source_files/main.c estimated size: 33
 
 shared
 		__initializatio		CODE           	03FD	0000	0
